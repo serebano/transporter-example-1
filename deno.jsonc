@@ -1,0 +1,18 @@
+{
+  "name": "@clappcodes/transporter-example-1",
+  "tasks": {
+    "dev": "deno run -A --env --watch main.ts"
+  },
+  "imports": {
+    "@clappcodes/transporter": "jsr:@clappcodes/transporter@^0.2.2"
+  },
+  "deploy": {
+    "project": "d4e761e1-8e43-439f-8566-c13400adcbd1",
+    "name": "transporter-example-1",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
+}

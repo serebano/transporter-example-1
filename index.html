@@ -1,0 +1,25 @@
+<script>
+	globalThis.DEBUG = true;
+</script>
+<script type="module">
+	import {
+		IncomingTextStream,
+		OutgoingTextStream,
+	} from "https://cdn.skypack.dev/@clappcodes/transporter?dts";
+	// "https://esm.sh/@clappcodes/transporter?keep-names";
+
+	async function textStream() {
+		const incoming = new IncomingTextStream("/foo");
+		const outgoing = new OutgoingTextStream("/foo");
+
+		await outgoing.write("Hello, from browser");
+
+		for await (const chunk of await incoming.ready) {
+			console.log("(server)", chunk);
+		}
+	}
+
+	textStream();
+</script>
+
+<h1>Demo</h1>
